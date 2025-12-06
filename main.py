@@ -38,7 +38,7 @@ def grafiques_crank():
     # Fem les grafiques corresponents al mètode de Crank-Nicolson
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.set_xlabel("Posicions [m]")
+    ax.set_xlabel("Posicions [cm]")
     ax.set_ylabel("Temperatura [ºC]")
     ax.set_title("Comparació de Crank-Nicolson per diferents $\\Delta$t")
 
@@ -68,7 +68,7 @@ def grafiques_explicit():
     fig2 = plt.figure()
     ax1 = fig1.add_subplot(111)
     ax2 = fig2.add_subplot(111)
-    ax1.set_xlabel("Posicions [m]")
+    ax1.set_xlabel("Posicions [cm]")
     ax1.set_ylabel("Temperatura [ºC]")
     ax1.set_title("Comparació de Euler Explícit per diferents $\\Delta$t")
     configura_grafica(ax1)
@@ -76,7 +76,7 @@ def grafiques_explicit():
 
     configura_grafica(ax2)
     configura_limits_teixit(ax2)
-    ax2.set_xlabel("Posicions [m]")
+    ax2.set_xlabel("Posicions [cm]")
     ax2.set_ylabel("Temperatura [ºC]")
     ax2.set_title("Comparació de Euler Explícit per diferents $\\Delta$t (divergents)")
     x, T = fxt_t_determinat(constants.t_a)
@@ -98,7 +98,7 @@ def grafiques_implicit():
     # Igual que amb els mètodes anteriors, fem la representació per cada valor de dt
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.set_xlabel("Posicions [m]")
+    ax.set_xlabel("Posicions [cm]")
     ax.set_ylabel("Temperatura [ºC]")
     ax.set_title("Comparació de Euler Implícit per diferents $\\Delta$t")
     configura_grafica(ax)
@@ -120,7 +120,7 @@ def grafiques_conjunt():
     i_petit = min(constants.T_implicit)
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.set_xlabel("Posicions [m]")
+    ax.set_xlabel("Posicions [cm]")
     ax.set_ylabel("Temperatura [ºC]")
     ax.set_title("Comparació de tots els metodes per $\\Delta$t menor")
     configura_grafica(ax)
