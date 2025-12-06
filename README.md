@@ -33,6 +33,8 @@ En el document **config.json** estan tots els paràmetres que es podem variar en
 com pot ser el temps límit, temperatura del cos, entre d'altres.
 *No hem comprovat els errors que puguin provocar alteracions d'aquestes variables*,
 especialment el temps límit, que augmentarà el temps de creació de les animacions de ~1.5 min fins a + 15 min.
+(per curiositat, hem posat t_a = 1, que equival a simular el sistema durant uns 450 segons,
+el resultat és el video animacio_450s.mp4)
 
 Per retornar als valors per defecte, es pot deixar el document en blanc
 
