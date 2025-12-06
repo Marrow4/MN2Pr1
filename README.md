@@ -25,7 +25,7 @@ Automàticament instal·la les dependències en el document **myproject.toml**
 - Obrir una terminal en la carpeta arrel
 - Crear l'ambient virtual `python -m venv .venv`
 - `.venv\Scripts\activate`
-- `pip install requirements.txt`
+- `pip install -r requirements.txt`
 - `python main.py`
 
 ### Modificasions
