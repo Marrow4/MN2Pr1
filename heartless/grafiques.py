@@ -158,4 +158,4 @@ def create_animation_plot(
 
     ani = FuncAnimation(fig, update, frames=frames_totals, interval=120, blit=True)
 
-    ani.save(settings.grafiques_path + f"/{save_name}.mp4", writer="ffmpeg", fps=10)
+    ani.save(settings.grafiques_path + f"/{save_name}.gif", writer="ffmpeg", fps=10)
