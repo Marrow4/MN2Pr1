@@ -35,3 +35,7 @@ com pot ser el temps límit, temperatura del cos, entre d'altres.
 especialment el temps límit, que augmentarà el temps de creació de les animacions de ~1.5 min fins a + 15 min.
 
 Per retornar als valors per defecte, es pot deixar el document en blanc
+
+
+#### Aclaració
+Aquest repositori s'ha fet públic i tots els commits són de la mateixa persona, pero el codi ha estat creat per TOTS.
