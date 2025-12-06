@@ -210,9 +210,9 @@ def grafiques_animades():
 
     print("Començant animació, tarda aproximadament 1 min 30 s")
     x, T = carregar_posicions_temperatures(
-        f"{settings.fitxer_implicit}_{min(constants.T_implicit)}"
+        f"{settings.fitxer_explicit}_{min(constants.T_explicit)}"
     )
-    create_animation_plot(fig2, ax2, x * 100, T, save_name="implicit")
+    create_animation_plot(fig2, ax2, x * 100, T, save_name="anim_explicit")
 
 
 def troba_limit_conjunt_metodes():
@@ -282,7 +282,7 @@ def main():
     x, T = carregar_posicions_temperatures(
         f"{settings.fitxer_explicit}_{min(constants.T_explicit)}"
     )
-    fig_h, ax_h = mapa_calor(T, metode="Implícit")
+    fig_h, ax_h = mapa_calor(T, metode="Explícit")
     guarda_figura(fig_h, "mapa-calor")
 
     if settings.show_grafiques:

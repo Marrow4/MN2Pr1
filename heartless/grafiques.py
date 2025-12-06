@@ -85,7 +85,7 @@ def configura_limits_teixit(ax):
 
 def mapa_calor(
     matriu,
-    eix_x="Posicions X",
+    eix_x="Posicions [cm]",
     eix_y="Iteracions temps",
     titol="Evolució temporal de la Temperatura",
     metode="",
@@ -158,4 +158,4 @@ def create_animation_plot(
 
     ani = FuncAnimation(fig, update, frames=frames_totals, interval=120, blit=True)
 
-    ani.save(settings.grafiques_path + f"/{save_name}.gif", writer="ffmpeg", fps=10)
+    ani.save(settings.grafiques_path + f"/{save_name}.gif", writer="ffmpeg", fps=60)
