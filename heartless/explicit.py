@@ -5,8 +5,10 @@ from heartless.normalitzacio import desnormalitza_temperatura, normalitza_temper
 from heartless.utils import guardar_matriu
 
 
-def euler_explicit(dx, dt) -> np.ndarray:
-    t_cos = normalitza_temperatura(constants.T_COS)
+def euler_explicit(dx, dt,t_cos=None) -> np.ndarray:
+    if t_cos is None:
+        t_cos = constants.T_COS
+    t_cos = normalitza_temperatura(t_cos)
 
     def euler_step_arr(Tnow):
         # Creem un array plena de T_COS

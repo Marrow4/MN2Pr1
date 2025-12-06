@@ -5,7 +5,9 @@ from heartless.normalitzacio import desnormalitza_temperatura, normalitza_temper
 from heartless.utils import gauss_pivotatge, guardar_matriu
 
 
-def crank_nicolson(dx, dt):
+def crank_nicolson(dx, dt,t_cos=None):
+    if t_cos is None:
+        t_cos = constants.T_COS
     iteracions = int(constants.t_a // dt) + 1
 
     beta = dt / (2 * dx * dx)
@@ -42,7 +44,7 @@ def crank_nicolson(dx, dt):
         B[-1] += T[i - 1, -1] * beta
 
         T[i, 1:-1] = gauss_pivotatge(A, B)
-    return T + normalitza_temperatura(constants.T_COS)
+    return T + normalitza_temperatura(t_cos)
 
 
 def executa_sequencia_crank_nicolson():

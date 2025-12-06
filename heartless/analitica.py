@@ -4,7 +4,7 @@ from heartless.configuracio import constants
 from heartless.normalitzacio import desnormalitza_distancia, desnormalitza_temperatura
 
 
-def fxt_t_determinat(t: float, lim_sum: int = 300):
+def fxt_t_determinat(t: float, lim_sum: int = 300,t_cos=None):
     """Calcula la funció analítica dinat un temps normalitzat
 
     Parameters
@@ -18,14 +18,16 @@ def fxt_t_determinat(t: float, lim_sum: int = 300):
         Resultat per totes les x (normalitzades) en el t donat
     """
     T_list = []
-    b = constants.T_COS
+    if t_cos is None:
+        b = 36.5
+    else:
+        b = t_cos
     # Treballem amb temperatura normalitzada (per aixo el límit és 1)
     x_arr = np.linspace(0, 1, constants.N, dtype=np.float64)
     for x in x_arr:
         sum = 0
-        for i in range(
-            lim_sum
-        ):  # `lim_sum` és el límit del sumatori, pot fer variar la presició
+        # `lim_sum` és el límit del sumatori, pot fer variar la presició
+        for i in range(lim_sum):
             # Equació trobada
             sum = sum + (
                 (1 - np.exp(-((2 * i + 1) ** 2) * (np.pi) ** 2 * t)) / (2 * i + 1) ** 3

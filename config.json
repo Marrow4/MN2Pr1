@@ -6,7 +6,6 @@
   "L": 0.02,
   "l_mal": 0.005,
   "VOLTATGE": 40.0,
-  "T_COS": 36,
   "N": 101,
   "t_a": 0.025,
   "T_explicit": [
@@ -30,5 +29,5 @@
   "temps_plot": [
     1.0
   ],
-  "show_grafiques": true
+  "show_grafiques": false
 }

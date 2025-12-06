@@ -90,7 +90,7 @@ def mapa_calor(
     titol="Evolució temporal de la Temperatura",
     metode="",
 ):
-    fig = plt.figure(figsize=(8, 8), layout="constrained")
+    fig = plt.figure(layout="constrained")
     ax = fig.add_subplot(111)
     # Fem el mapa de calor amb barra de colors
     im = ax.imshow(matriu, cmap="jet", aspect="auto")

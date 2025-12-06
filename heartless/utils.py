@@ -192,7 +192,7 @@ def guarda_figura(fig, fitxer, **kwargs):
     # Guarda la figura amb una configuració específica
     fig.savefig(directori_fitxer, dpi=300, bbox_inches="tight", **kwargs)
 
-    print(f"Figure saved to: {directori_fitxer}")
+    print(f"Gràfica guardada a: {directori_fitxer}")
 
 
 def error_relatiu(T_exp, T_an):
@@ -223,7 +223,25 @@ def troba_maxima_iter_temps(T) -> tuple[int, int]:
     lim_esq = np.ceil(constants.N * (constants.L - constants.l_mal) / (2 * constants.L))
     lim_dret = constants.N - lim_esq
 
-    rows, cols = T.shape
+    rows = T.shape
+    if len(rows) == 1:
+        for j in range(rows[0]):
+            # Si el teixit està fora dels límits malalts (es teixit sa)
+            # limitem la temperatura a 50 ºC
+            if j < lim_esq or j > lim_dret:
+                if T[j] > 50:
+                    # ha trobat l'índex que no compleix, torna l'anterior
+                    return (
+                        0,
+                        j-1,
+                    )
+            # Si es teixit malalt, mirem que no superi 80 ºC
+            else:
+                if T[j] > 80:
+                    return 0, j-1
+        return 0,-1
+        
+    rows,cols = rows
     for i in range(rows):
         for j in range(cols):
             # Si el teixit està fora dels límits malalts (es teixit sa)

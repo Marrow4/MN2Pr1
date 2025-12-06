@@ -5,11 +5,13 @@ from heartless.normalitzacio import desnormalitza_temperatura, normalitza_temper
 from heartless.utils import gauss_pivotatge, guardar_matriu
 
 
-def euler_implicit(dx, dt) -> np.ndarray:
+def euler_implicit(dx, dt,T_c=None) -> np.ndarray:
     # definim els paràmetres
     x = constants.N
     t = int(constants.t_a // dt + 1)
-    T_c = normalitza_temperatura(constants.T_COS)
+    if T_c is None:
+        T_c = constants.T_COS
+    T_c = normalitza_temperatura(T_c)
 
     a = dt
     b = dt / (dx**2)
